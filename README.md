@@ -4,6 +4,8 @@
 
 ### 微分
 
+[导数与微分](https://github.com/basicv8vc/MachineLearning101/blob/master/maths/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86.md)
+
 ### 概率论
 
 ### 统计
