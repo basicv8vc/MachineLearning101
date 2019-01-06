@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+</head>
+<body>
+<p>微分学的基本概念是<strong>导数</strong>与<strong>微分</strong>。</p>
+<h3 id="导数">导数</h3>
+<p>先引入一个应用问题：变速直线运动瞬时速度问题。</p>
+<h4 id="速度问题">速度问题</h4>
+<p>设某个点在数轴上运动，时刻<span class="math inline">\(t\)</span>的位置为<span class="math inline">\(s\)</span>，</p>
+<p><span class="math display">\[s=f(t)\]</span></p>
+<p>如果求动点在某一时刻(假设为<span class="math inline">\(t_{0}\)</span>)的瞬时速度？</p>
+<p>我们先来看平均速度的定义：取时刻<span class="math inline">\(t_{0}\)</span>到<span class="math inline">\(t\)</span>这样一个时间间隔，动点从位置<span class="math inline">\(s_{0}=f(t_{0})\)</span>移动到<span class="math inline">\(s=f(t)\)</span>，这段时间内的平均速度为:</p>
+<p><span class="math display">\[\frac{s-s_{0}}{t-t_{0}} = \frac{f(t)-f(t_{0})}{t-t_{0}}\]</span></p>
+<p>如果<span class="math inline">\(t-t_{0}\)</span>非常小，平均速度可以近似看做时刻<span class="math inline">\(t_{0}\)</span>的速度，更准确地说，令<span class="math inline">\(t\to t_{0}\)</span>，即取极限，如果极限存在，设为<span class="math inline">\(v\)</span>:</p>
+<p><span class="math display">\[v=\lim_{t\to t_{0}} \frac{f(t)-f(t_{0})}{t-t_{0}}\]</span></p>
+<p>此时，极限值<span class="math inline">\(v\)</span>就称为动点在时刻<span class="math inline">\(t_{0}\)</span>的(瞬时)速度。</p>
+<h4 id="导数的定义">导数的定义</h4>
+<p>变速直线运动的速度可以归结为如下的极限：</p>
+<p><span class="math display">\[\lim_{x\to x_{0}} \frac{f(x)-f(x_{0})}{x-x_{0}}\]</span></p>
+<p>这里<span class="math inline">\(x-x_{0}\)</span>和<span class="math inline">\(f(x)-f(x_{0})\)</span>分别是函数<span class="math inline">\(y=f(x)\)</span>的自变量增量<span class="math inline">\(\Delta x\)</span>和函数增量<span class="math inline">\(\Delta y\)</span>:</p>
+<p><span class="math display">\[\Delta x = x-x_{0}\]</span></p>
+<p><span class="math display">\[\Delta y = f(x)-f(x_{0})=f(x_{0}+\Delta x)-f(x_{0})\]</span></p>
+<p><span class="math inline">\(x\to x_{0}\)</span>等价于<span class="math inline">\(\Delta x\to 0\)</span>，所以下列几个式子都等价：</p>
+<p><span class="math inline">\(\lim_{x\to x_{0}} \frac{f(x)-f(x_{0})}{x-x_{0}}\)</span>, <span class="math inline">\(\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}\)</span>, <span class="math inline">\(\lim_{\Delta x\to 0}\frac{f(x_{0} + \Delta x)-f(x_{0})}{\Delta x}\)</span></p>
+<p><strong>导数定义</strong></p>
+<p>设函数<span class="math inline">\(f(x)\)</span>在点$x_{0}的某个邻域内有定义，当自变量 <span class="math inline">\(x\)</span> 在 <span class="math inline">\(x_{0}\)</span> 处取得增量 <span class="math inline">\(\Delta x\)</span> (点<span class="math inline">\(x_{0}+\Delta x\)</span>仍在该邻域内)时，相应的函数取得增量<span class="math inline">\(\Delta y=f(x_{0}+\Delta x)-f(x_{0})\)</span> ；如果 <span class="math inline">\(\Delta y\)</span> 与 <span class="math inline">\(\Delta x\)</span> 之比当 <span class="math inline">\(\Delta x \to 0\)</span> 时的极限存在，则称函数 <span class="math inline">\(y=f(x)\)</span> 在点 <span class="math inline">\(x_{0}\)</span> 处可导，并称这个极限为函数 <span class="math inline">\(y=f(x)\)</span> 在点 <span class="math inline">\(x_{0}\)</span> 处的导数，即为 <span class="math inline">\(f&#39;(x_{0})\)</span> ，即</p>
+<p><span class="math display">\[f&#39;(x_{0}) = \lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x} = \lim_{\Delta x\to 0}\frac{f(x_{0} + \Delta x)}{\Delta x}\]</span></p>
+<p>也可记作 <span class="math inline">\(y&#39;|_{x=x_{0}}, \frac{dy}{dx}|_{x=x_{0}}, \frac{df(x)}{dx}_{x=x_{0}}\)</span></p>
+<p>如果函数 <span class="math inline">\(y=f(x)\)</span> 在开区间 <span class="math inline">\(I\)</span> 内的每个点都可导，就称函数 <span class="math inline">\(f(x)\)</span> 在开区间<span class="math inline">\(I\)</span>内可导，此时，对于任意 <span class="math inline">\(x\in I\)</span>，都对应着 <span class="math inline">\(f&#39;(x)\)</span>的一个确定的导数值，这样就构成了一个新的函数，这个函数叫做原来函数 <span class="math inline">\(y=f(x)\)</span> 的导函数，记作 <span class="math inline">\(y&#39;, f&#39;(x), \frac{dy}{dx}, \frac{df(x)}{dx}\)</span></p>
+<h4 id="函数求导法则">函数求导法则</h4>
+<p>运用函数求导法则和基本初等函数的求导公式，就能方便地求出常见初等函数的导数。</p>
+<h5 id="函数的和差积商的求导法则">函数的和、差、积、商的求导法则</h5>
+<p>如果函数 <span class="math inline">\(u=u(x)\)</span>和<span class="math inline">\(v=v(x)\)</span>都在点<span class="math inline">\(x\)</span> 具有导数，那么它们的和、差、积、商(处分母为零的点外)都在点<span class="math inline">\(x\)</span>具有导数，且</p>
+<ul>
+<li><span class="math inline">\([u(x)\pm v(x)]&#39; = u&#39;(x)\pm v&#39;(x)\)</span></li>
+<li><span class="math inline">\([u(x)v(x)]&#39;=u&#39;(x)v(x) + u(x)v&#39;(x)\)</span></li>
+<li><span class="math inline">\([frac{u(x)}{v(x)}]&#39; = frac{u&#39;(x)v(x)-u(x)v&#39;(x)}{v^{2}(x)}, (v(x)\neq 0)\)</span></li>
+</ul>
+<h5 id="复合函数求导法则">复合函数求导法则</h5>
+<p>如果 <span class="math inline">\(u=g(x)\)</span>在点<span class="math inline">\(x\)</span>可导，而<span class="math inline">\(y=f(u)\)</span>在点<span class="math inline">\(u=g(x)\)</span>可导，则复合函数 <span class="math inline">\(y=f[g(x)]\)</span>在点<span class="math inline">\(x\)</span>可导，且其导数为</p>
+<p><span class="math display">\[\frac{dy}{dx}=f&#39;(u)\cdot g&#39;(x)\]</span></p>
+<p>或</p>
+<p><span class="math display">\[\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}\]</span></p>
+<h3 id="微分的定义">微分的定义</h3>
+<p>先来看一个问题,一块正方形的金属片受温度变化的影响，其边长由<span class="math inline">\(x_{0}\)</span>变到 <span class="math inline">\(x_{0}+\Delta x\)</span>，问金属片的面积增加了多少？</p>
+<p>设金属片的边长为<span class="math inline">\(x\)</span>，面积为<span class="math inline">\(A\)</span>，则<span class="math inline">\(A=x^{2}\)</span>，金属片受到温度变化的影响时面积的改变量，可以看成是当自变量<span class="math inline">\(x\)</span>自<span class="math inline">\(x_{0}\)</span>取得增量<span class="math inline">\(\Delta x\)</span>时，函数<span class="math inline">\(A=x^{2}\)</span>相应的增量 <span class="math inline">\(\Delta A\)</span>，即</p>
+<p><span class="math display">\[\Delta A=(x_{0}+\Delta x)^{2}-x_{0}^{2}=2x_{0}\Delta x + (\Delta x)^{2}\]</span></p>
+<p>可以看到，<span class="math inline">\(\Delta A\)</span>分为两部分，第一部分是<span class="math inline">\(2x_{0}\Delta x\)</span> 是<span class="math inline">\(\Delta x\)</span>的线性函数，即下图两个灰色矩形的面积和，而第二部分<span class="math inline">\((\Delta x)^{2}\)</span>是下图中灰色小正方形的面积，</p>
+<p>当<span class="math inline">\(\Delta x\to 0\)</span>时， 第二部分 <span class="math inline">\((\Delta x)^{2}\)</span>是比<span class="math inline">\(\Delta x\)</span>高阶的无穷小，即<span class="math inline">\((\Delta x)^{2}=o(\Delta x)\)</span>。如果边长改变很小，面积的改变量<span class="math inline">\(\Delta A\)</span>可以近似用第一部分来代替。</p>
+<p><strong>微分定义</strong></p>
+<p>设函数<span class="math inline">\(y=f(x)\)</span>在某区间内有定义，<span class="math inline">\(x_{0}\)</span>和<span class="math inline">\(x_{0}+\Delta x\)</span>就在这区间内，如果增量</p>
+<p><span class="math display">\[\Delta y=f(x_{0}+\Delta x)-f(x_{0})\]</span></p>
+<p>可表示为</p>
+<p><span class="math display">\[\Delta y = A\Delta x + o(\Delta x )\]</span></p>
+<p>其中<span class="math inline">\(A\)</span>是不依赖于<span class="math inline">\(\Delta x\)</span>的常数，那么称函数<span class="math inline">\(y=f(x)\)</span>在点<span class="math inline">\(x_{0}\)</span> 是可微的，而 <span class="math inline">\(A\Delta x\)</span>叫做函数 <span class="math inline">\(y=f(x)\)</span> 在点 <span class="math inline">\(x_{0}\)</span>相应于自变量增量 <span class="math inline">\(\Delta x\)</span>的微分，记作 <span class="math inline">\(dy\)</span>，即</p>
+<p><span class="math display">\[dy = A\Delta x\]</span></p>
+<p><strong>函数<span class="math inline">\(f(x)\)</span>在点<span class="math inline">\(x_{0}\)</span>可微的充要条件是函数<span class="math inline">\(f(x)\)</span>在点<span class="math inline">\(x_{0}\)</span>可导，且当 <span class="math inline">\(f(x)\)</span>在点 <span class="math inline">\(x_{0}\)</span>可微时，其微分一定是</strong></p>
+<p><span class="math display">\[dy=f&#39;(x_{0})\Delta x\]</span></p>
+<p>函数<span class="math inline">\(y=f(x)\)</span>在任意点 <span class="math inline">\(x\)</span>的微分，称为函数的微分，记作<span class="math inline">\(dy, df(x)\)</span>, 即<span class="math inline">\(dy=f&#39;(x)\Delta x\)</span></p>
+<p>为了统一符号，通常把自变量<span class="math inline">\(x\)</span>的增量<span class="math inline">\(\Delta x\)</span>称为自变量的微分，记作<span class="math inline">\(dx, dx=\Delta x\)</span>，于是，函数<span class="math inline">\(y=f(x)\)</span>的微分又可记作:</p>
+<p><span class="math display">\[dy=f&#39;(x)dx\]</span></p>
+<p>从而有</p>
+<p><span class="math display">\[\frac{dy}{dx}=f&#39;(x)\]</span></p>
+<h4 id="微分的几何意义">微分的几何意义</h4>
+<p>用切线段来近似代替曲线段，即非线性函数的局部线性化，这可是微分的基本思想之一。</p>
+</body>
+</html>
